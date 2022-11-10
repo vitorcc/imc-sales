@@ -9,7 +9,7 @@ import { Sale } from '../../models/sale';
 
 function SalesCard() {
 
-    const [minDate, setMinDate] = useState(new Date());
+    const [minDate, setMinDate] = useState(new Date("01-01-2022"));
     const [maxDate, setMaxDate] = useState(new Date());
 
     const [sales, setSales] = useState<Sale[]>([]);
@@ -72,7 +72,7 @@ function SalesCard() {
                                         <td>R$ {sale.amount.toFixed(2)}</td>
                                         <td>
                                             <div className="dsmeta-btn-container">
-                                                <NotificationButton />
+                                                <NotificationButton saleId={sale.id} />
                                             </div>
                                         </td>
                                     </tr>
